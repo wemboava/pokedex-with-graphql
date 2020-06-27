@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 import ApolloClient from "apollo-boost";
-import {ApolloProvider} from "react-apollo";
+import { ApolloProvider } from "react-apollo";
 
 const client = new ApolloClient({
-  uri: "https://graphql-pokemon.now.sh/"
+  uri: "https://graphql-pokemon.now.sh/",
 });
 
 function App() {
