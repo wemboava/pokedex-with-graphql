@@ -1,6 +1,10 @@
 import React from "react";
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "react-apollo";
+import { BrowserRouter } from "react-router-dom";
+
+import Routes from "./routes";
+import GlobalStyles from "./styles/global";
 
 const client = new ApolloClient({
   uri: "https://graphql-pokemon.now.sh/",
@@ -9,9 +13,10 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <div>
-        <h2>Me contrata</h2>
-      </div>
+      <BrowserRouter>
+        <Routes />
+        <GlobalStyles />
+      </BrowserRouter>
     </ApolloProvider>
   );
 }
