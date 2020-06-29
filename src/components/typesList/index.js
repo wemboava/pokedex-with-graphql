@@ -2,7 +2,7 @@ import React from "react";
 
 import { Container, List, Item } from "./styles";
 
-const TypesList = () => {
+const PokemonsList = () => {
   const types = [
     {
       name: "Glass",
@@ -63,4 +63,4 @@ const TypesList = () => {
   );
 };
 
-export default TypesList;
+export default PokemonsList;
