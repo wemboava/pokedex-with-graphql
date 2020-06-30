@@ -21,6 +21,7 @@ export const HeartButton = styled.div`
     opacity: 0;
     transform: scale(3);
     position: absolute;
+    z-index: 20;
     &:checked + .heart {
       animation: heartAnimate 0.8s steps(28) forwards;
     }

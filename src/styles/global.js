@@ -16,13 +16,13 @@ export default createGlobalStyle`
 
   html, body, #root {
     height: 100%;
+    overflow-x: hidden;
   }
 
   body {
     -webkit-font-smoothing: antialiased !important;
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     color: #555;
-    overflow-x: hidden;
     background: url(${pokeball}) no-repeat;
     background-size: 300px;
     background-position: calc(100% + 150px) -110px;

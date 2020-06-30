@@ -16,7 +16,7 @@ export const Container = styled.div`
 export const Content = styled.div`
   position: relative;
   z-index: 5;
-  img {
+  & > img {
     width: 150px;
     position: absolute;
     right: calc(50% - 75px);

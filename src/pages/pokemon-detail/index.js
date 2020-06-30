@@ -42,16 +42,15 @@ const GET_POKEMON = gql`
         id
         number
         name
-        weight {
+        image
+        classification
+        height {
           minimum
           maximum
         }
-        attacks {
-          fast {
-            name
-            type
-            damage
-          }
+        weight {
+          minimum
+          maximum
         }
       }
     }

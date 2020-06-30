@@ -14,7 +14,12 @@ const PokemonInfo = ({ pokemon, bgColor }) => {
       case "details":
         return <DetailContent pokemon={pokemon} />;
       case "evolutions":
-        return <EvolutionsContent />;
+        return (
+          <EvolutionsContent
+            evolutions={pokemon.evolutions}
+            bgColor={bgColor}
+          />
+        );
       case "attacks":
         return <AttacksContent attacks={pokemon.attacks} bgColor={bgColor} />;
       default:
