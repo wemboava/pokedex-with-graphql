@@ -17,6 +17,11 @@ const GET_POKEMON = gql`
       weaknesses
       types
       attacks {
+        fast {
+          name
+          type
+          damage
+        }
         special {
           name
           type
@@ -147,7 +152,12 @@ const PokemonDetail = () => {
           Back
         </button>
       </div>
-      <PokemonInfo pokemon={data.pokemon} />
+      <PokemonInfo
+        pokemon={data.pokemon}
+        bgColor={
+          types.find((type) => data.pokemon.types.includes(type.name))?.color
+        }
+      />
     </Container>
   );
 };

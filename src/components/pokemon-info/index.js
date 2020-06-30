@@ -6,7 +6,7 @@ import EvolutionsContent from "./evolutions-content";
 
 import { Container, Tabs, Tab, TabContent, Content } from "./styles";
 
-const PokemonInfo = ({ pokemon }) => {
+const PokemonInfo = ({ pokemon, bgColor }) => {
   const [currentTab, setCurrentTab] = useState("details");
 
   const handleTabContent = useCallback(() => {
@@ -16,11 +16,11 @@ const PokemonInfo = ({ pokemon }) => {
       case "evolutions":
         return <EvolutionsContent />;
       case "attacks":
-        return <AttacksContent />;
+        return <AttacksContent attacks={pokemon.attacks} bgColor={bgColor} />;
       default:
         return <DetailContent />;
     }
-  }, [currentTab]);
+  }, [currentTab, pokemon]);
 
   return (
     <Container>
