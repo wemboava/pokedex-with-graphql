@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
-import gql from "graphql-tag";
 
+import { useHistory } from "react-router-dom";
+
+import gql from "graphql-tag";
 import { useQuery } from "@apollo/react-hooks";
 
 import { Container, List, Item, Types, TypeName } from "./styles";
@@ -42,6 +44,7 @@ const GET_POKEMONS = gql`
 `;
 
 const TypesList = () => {
+  const history = useHistory();
   const types = [
     {
       name: "Grass",
@@ -123,7 +126,11 @@ const TypesList = () => {
     <Container>
       <List>
         {pokemons.slice(0, pokemons.length / 2).map((type) => (
-          <Item bgColor={type.bgColor} key={type.name}>
+          <Item
+            onClick={() => history.push(`/pokemon/${type.name}`)}
+            bgColor={type.bgColor}
+            key={type.name}
+          >
             <stroke>{type.name}</stroke>
             <div>
               <Types>
@@ -139,7 +146,11 @@ const TypesList = () => {
       </List>
       <List>
         {pokemons.slice(pokemons.length / 2, pokemons.length).map((type) => (
-          <Item bgColor={type.bgColor} key={type.name}>
+          <Item
+            onClick={() => history.push(`/pokemon/${type.name}`)}
+            bgColor={type.bgColor}
+            key={type.name}
+          >
             <stroke>{type.name}</stroke>
             <div>
               <Types>
