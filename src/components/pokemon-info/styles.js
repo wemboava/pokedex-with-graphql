@@ -54,7 +54,7 @@ export const Tab = styled.li`
   color: #d1d1d1;
   text-align: center;
   font-weight: 600;
-  font-size: 0.9em;
+  font-size: 1em;
   transition: 0.3s ease-in-out;
   ${(props) =>
     props.isActivity &&

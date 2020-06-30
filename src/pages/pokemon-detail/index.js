@@ -14,6 +14,16 @@ const GET_POKEMON = gql`
       number
       name
       image
+      classification
+      height {
+        minimum
+        maximum
+      }
+      weight {
+        minimum
+        maximum
+      }
+      resistant
       weaknesses
       types
       attacks {

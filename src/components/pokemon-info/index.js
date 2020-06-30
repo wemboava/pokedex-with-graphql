@@ -12,7 +12,7 @@ const PokemonInfo = ({ pokemon, bgColor }) => {
   const handleTabContent = useCallback(() => {
     switch (currentTab) {
       case "details":
-        return <DetailContent />;
+        return <DetailContent pokemon={pokemon} />;
       case "evolutions":
         return <EvolutionsContent />;
       case "attacks":
@@ -20,7 +20,7 @@ const PokemonInfo = ({ pokemon, bgColor }) => {
       default:
         return <DetailContent />;
     }
-  }, [currentTab, pokemon]);
+  }, [currentTab, pokemon, bgColor]);
 
   return (
     <Container>
