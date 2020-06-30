@@ -4,7 +4,7 @@ import { useParams, useHistory } from "react-router-dom";
 import gql from "graphql-tag";
 import { useQuery } from "@apollo/react-hooks";
 
-import { Container } from "./styles";
+import { Container, HeartButton } from "./styles";
 import PokemonInfo from "../../components/pokemon-info";
 
 const GET_POKEMON = gql`
@@ -130,9 +130,9 @@ const PokemonDetail = () => {
         types.find((type) => data.pokemon.types.includes(type.name))?.color
       }
     >
-      <div style={{ padding: "30px" }}>
+      <div className="header">
         <button
-          className="back-button"
+          className="header__back-button"
           type="button"
           onClick={() => router.goBack()}
         >
@@ -151,6 +151,10 @@ const PokemonDetail = () => {
           </svg>
           Back
         </button>
+        <HeartButton>
+          <input type="checkbox" className="toggle" />
+          <div className="heart" />
+        </HeartButton>
       </div>
       <PokemonInfo
         pokemon={data.pokemon}
