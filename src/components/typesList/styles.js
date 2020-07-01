@@ -2,18 +2,19 @@ import styled from "styled-components";
 
 import pokeball from "../../assets/images/pokeball-bg.png";
 
-export const Container = styled.div`
-  padding: 30px;
-`;
+export const Container = styled.div``;
 
 export const List = styled.ul`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  a {
+    width: 47%;
+  }
 `;
 
 export const Item = styled.li`
-  width: 47%;
+  width: 100%;
   background: ${(props) => props.bgColor} url(${pokeball}) no-repeat;
   background-position: right;
   background-size: 75px;

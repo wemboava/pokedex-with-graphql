@@ -25,7 +25,7 @@ export default createGlobalStyle`
     color: #555;
     background: url(${pokeball}) no-repeat;
     background-size: 300px;
-    background-position: calc(100% + 150px) -110px;
+    background-position: calc(100% + 105px) -112px;
   }
 
   body, input, button {

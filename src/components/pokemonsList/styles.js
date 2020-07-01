@@ -1,10 +1,12 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  padding: 30px 0;
+  padding: 10px 0 20px 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  scale {
+  }
 `;
 
 export const List = styled.ul`
@@ -40,7 +42,7 @@ export const Item = styled.li`
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  color: #555;
   & div {
     width: 100%;
     display: flex;

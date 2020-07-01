@@ -158,7 +158,6 @@ const PokemonDetail = () => {
               strokeWidth="2"
             />
           </svg>
-          Back
         </button>
         <HeartButton>
           <input type="checkbox" className="toggle" />
