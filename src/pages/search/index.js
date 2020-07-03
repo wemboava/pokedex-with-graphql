@@ -9,7 +9,7 @@ import PokemonsList from "../../components/pokemonsList";
 
 import { Container, InputWrapper } from "./styles";
 
-import search from "../../assets/images/search.svg";
+// import search from "../../assets/images/search.svg";
 
 const GET_POKEMONS = gql`
   {
@@ -126,13 +126,9 @@ const Search = () => {
     return data;
   }, []);
 
-  const handleSubmit = useCallback(
-    (e) => {
-      e.preventDefault();
-      console.log(searchValue);
-    },
-    [searchValue]
-  );
+  const handleSubmit = useCallback((e) => {
+    e.preventDefault();
+  }, []);
 
   const { loading, error, data } = useQuery(GET_POKEMONS);
 
@@ -145,10 +141,6 @@ const Search = () => {
       bgColor: types.find((type) => pokemon.types.includes(type.name))?.color,
     };
   });
-
-  console.log("pokemons", pokemons);
-  // eslint-disable-next-line no-restricted-globals
-  console.log("queryString", queryString.parse(location.search));
 
   return (
     <Container>
@@ -181,12 +173,12 @@ const Search = () => {
             onChange={(event) => setSearchValue(event.target.value)}
             placeholder="Search for pokémon names"
           />
-          <img
+          {/* <img
             onClick={handleSubmit}
             className="search-image"
             src={search}
             alt="search"
-          />
+          /> */}
         </InputWrapper>
       </form>
       <PokemonsList pokemons={pokemonsFiltered(pokemons)} />

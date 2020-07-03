@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
 
 import gql from "graphql-tag";
-import { useQuery } from "@apollo/react-hooks";
+import { useQuery, useMutation } from "@apollo/react-hooks";
+
+import { UPDATE_FAVORITE_POKEMONS } from "../../apollo/mutations/favoritePokemons";
+import { UPDATE_CURRENT_POKEMON_TYPES } from "../../apollo/mutations/pokemonTypes";
+import { GET_FAVORITE_POKEMONS } from "../../apollo/queries/favoritePokemons";
+import { GET_POKEMON_TYPES } from "../../apollo/queries/pokemonTypes";
 
 import { Container, HeartButton } from "./styles";
 import PokemonInfo from "../../components/pokemon-info";
@@ -61,84 +66,46 @@ const PokemonDetail = () => {
   const params = useParams();
   const router = useHistory();
 
-  const types = [
-    {
-      name: "Grass",
-      color: "#49D0B1",
-    },
-    {
-      name: "Bug",
-      color: "#3de651",
-    },
-    {
-      name: "Water",
-      color: "#58A9F4",
-    },
-    {
-      name: "Electric",
-      color: "#FFCE4C",
-    },
-    {
-      name: "Fighting",
-      color: "#FF4747",
-    },
-    {
-      name: "Ice",
-      color: "#57ebf4",
-    },
-    {
-      name: "Fairy",
-      color: "#ff91cd",
-    },
-    {
-      name: "Fire",
-      color: "#F7776A",
-    },
-    {
-      name: "Psychic",
-      color: "#7E528C",
-    },
-    {
-      name: "Ground",
-      color: "#B0736E",
-    },
-    {
-      name: "Flying",
-      color: "#84d6ff",
-    },
-    {
-      name: "Rock",
-      color: "#bdbdbd",
-    },
-    {
-      name: "Normal",
-      color: "#ccc",
-    },
-    {
-      name: "Dragon",
-      color: "#f7ac3c",
-    },
-    {
-      name: "Poison",
-      color: "#BE7CF3",
-    },
-  ];
+  const [pokemonType, setPokemonType] = useState({});
+
+  const favotitePokemonsResult = useQuery(GET_FAVORITE_POKEMONS);
+  const pokemonTypesResult = useQuery(GET_POKEMON_TYPES);
 
   const { loading, error, data } = useQuery(GET_POKEMON, {
     variables: { name: params.id },
   });
 
+  const [updateFavoritePokemon] = useMutation(UPDATE_FAVORITE_POKEMONS);
+  const [updateCurrentPokemonType] = useMutation(UPDATE_CURRENT_POKEMON_TYPES);
+
+  useEffect(() => {
+    if (data) {
+      updateCurrentPokemonType({
+        variables: {
+          typeName: data?.pokemon?.types[0],
+        },
+      });
+    }
+  }, [updateCurrentPokemonType, data]);
+
+  useEffect(() => {
+    setPokemonType(pokemonTypesResult.data.pokemonTypes.current);
+  }, [setPokemonType, pokemonTypesResult]);
+
+  const handleFavorite = useCallback(
+    (pokeNumber) => {
+      return !!favotitePokemonsResult.data.favoritePokemons?.find(
+        (poke) => poke.number === pokeNumber
+      );
+    },
+    [favotitePokemonsResult]
+  );
+
   if (loading) return "Loading...";
   if (error) return `Error! ${error.message}`;
 
-  console.log("params", data);
-
   return (
-    <Container
-      bgColor={
-        types.find((type) => data.pokemon.types.includes(type.name))?.color
-      }
-    >
+    <Container bgColor={pokemonType.color}>
       <div className="header">
         <button
           className="header__back-button"
@@ -159,17 +126,30 @@ const PokemonDetail = () => {
             />
           </svg>
         </button>
-        <HeartButton>
-          <input type="checkbox" className="toggle" />
+        <HeartButton
+          onClick={() =>
+            updateFavoritePokemon({
+              variables: {
+                pokemon: {
+                  id: data.pokemon.id,
+                  number: data.pokemon.number,
+                  name: data.pokemon.name,
+                  image: data.pokemon.image,
+                  types: data.pokemon.types,
+                },
+              },
+            })
+          }
+        >
+          <input
+            defaultChecked={handleFavorite(data.pokemon.number)}
+            type="checkbox"
+            className="toggle"
+          />
           <div className="heart" />
         </HeartButton>
       </div>
-      <PokemonInfo
-        pokemon={data.pokemon}
-        bgColor={
-          types.find((type) => data.pokemon.types.includes(type.name))?.color
-        }
-      />
+      <PokemonInfo pokemon={data.pokemon} bgColor={pokemonType.color} />
     </Container>
   );
 };

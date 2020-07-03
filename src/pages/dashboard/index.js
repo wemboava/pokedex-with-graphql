@@ -6,7 +6,7 @@ import TypesList from "../../components/typesList";
 
 import { Container, InputWrapper, FavoriteButton } from "./styles";
 
-import search from "../../assets/images/search.svg";
+// import search from "../../assets/images/search.svg";
 
 const Dashboard = () => {
   const history = useHistory();
@@ -33,12 +33,12 @@ const Dashboard = () => {
             onChange={(event) => setSearchValue(event.target.value)}
             placeholder="Search for pokémon names"
           />
-          <img
+          {/* <img
             onClick={handleSubmit}
             className="search-image"
             src={search}
             alt="search"
-          />
+          /> */}
         </InputWrapper>
       </form>
       <div>

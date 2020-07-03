@@ -50,7 +50,7 @@ const EvolutionsContent = ({ evolutions, bgColor }) => {
       <div>
         <ReactSiema ref={siemaRef} {...options}>
           {evolutions.map((pokemon) => (
-            <div>
+            <div key={pokemon.id}>
               <Slide pokemon={pokemon} />
             </div>
           ))}

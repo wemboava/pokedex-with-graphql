@@ -94,7 +94,10 @@ const DetailContent = ({ pokemon }) => {
         <h4>Types</h4>
         <Types>
           {pokemon.types.map((item) => (
-            <TypeName bgColor={types.find((type) => type.name === item)?.color}>
+            <TypeName
+              key={item}
+              bgColor={types.find((type) => type.name === item)?.color}
+            >
               {item}
             </TypeName>
           ))}
@@ -105,7 +108,10 @@ const DetailContent = ({ pokemon }) => {
         <h4>Resistant</h4>
         <Types>
           {pokemon.resistant.map((item) => (
-            <TypeName bgColor={types.find((type) => type.name === item)?.color}>
+            <TypeName
+              key={item}
+              bgColor={types.find((type) => type.name === item)?.color}
+            >
               {item}
             </TypeName>
           ))}
@@ -116,7 +122,10 @@ const DetailContent = ({ pokemon }) => {
         <h4>Weaknesses</h4>
         <Types>
           {pokemon.weaknesses.map((item) => (
-            <TypeName bgColor={types.find((type) => type.name === item)?.color}>
+            <TypeName
+              key={item}
+              bgColor={types.find((type) => type.name === item)?.color}
+            >
               {item}
             </TypeName>
           ))}

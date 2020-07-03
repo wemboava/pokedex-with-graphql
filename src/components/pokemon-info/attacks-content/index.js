@@ -9,6 +9,7 @@ const AttacksContent = ({ attacks, bgColor }) => {
       <h4>Fast</h4>
       {attacks.fast.map((attack) => (
         <DamageBar
+          key={attack.name}
           title={attack.name}
           rate={attack.damage}
           type={attack.type}
@@ -19,6 +20,7 @@ const AttacksContent = ({ attacks, bgColor }) => {
       <h4>Special</h4>
       {attacks.special.map((attack) => (
         <DamageBar
+          key={attack.name}
           title={attack.name}
           rate={attack.damage}
           type={attack.type}
