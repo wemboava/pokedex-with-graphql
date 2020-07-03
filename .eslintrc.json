@@ -1,7 +1,8 @@
 {
   "env": {
     "es6": true,
-    "browser": true
+    "browser": true,
+    "jest": true
   },
   "extends": [
     "airbnb",
@@ -41,7 +42,9 @@
     "react-hooks/exhaustive-deps": "warn",
     "react/prop-types": "off",
     "react/jsx-props-no-spreading": "off",
-    "no-restricted-globals": "off"
+    "no-restricted-globals": "off",
+    "import/no-named-as-default-member": "off",
+    "import/no-named-as-default": "off"
   },
   "settings": {
   }

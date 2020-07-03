@@ -16,7 +16,7 @@ import search from "../../assets/images/search.svg";
 
 const GET_POKEMONS = gql`
   {
-    pokemons(first: 150) {
+    pokemons(first: 151) {
       id
       number
       name
@@ -148,7 +148,7 @@ const Search = () => {
   const handleSubmit = useCallback(
     (e) => {
       e.preventDefault();
-      history.push(`pokemon/${searchValue}`);
+      history.push(`/pokemon/${searchValue}`);
     },
     [searchValue, history]
   );
