@@ -8,6 +8,8 @@ import { useQuery } from "@apollo/react-hooks";
 import PokemonsList from "../../components/pokemonsList";
 import Loader from "../../components/loader";
 
+import { GET_FAVORITE_POKEMONS } from "../../apollo/queries/favoritePokemons";
+
 import { Container, InputWrapper } from "./styles";
 
 import search from "../../assets/images/search.svg";
@@ -116,15 +118,32 @@ const Search = () => {
     },
   ];
 
-  const pokemonsFiltered = useCallback((data) => {
-    // eslint-disable-next-line no-restricted-globals
-    const { type } = queryString.parse(location.search);
+  const favotitePokemonsResult = useQuery(GET_FAVORITE_POKEMONS);
 
-    if (type) {
-      return data.filter((pokemon) => pokemon.types.includes(type));
-    }
-    return data;
-  }, []);
+  const pokemonsFiltered = useCallback(
+    (data) => {
+      // eslint-disable-next-line no-restricted-globals
+      const { type, favorites } = queryString.parse(location.search);
+
+      if (type) {
+        return data.filter((pokemon) => pokemon.types.includes(type));
+      }
+      if (favorites) {
+        const pokemons = favotitePokemonsResult.data.favoritePokemons.map(
+          (pokemon) => {
+            return {
+              ...pokemon,
+              bgColor: types.find((typ) => pokemon.types.includes(typ.name))
+                ?.color,
+            };
+          }
+        );
+        return pokemons;
+      }
+      return data;
+    },
+    [favotitePokemonsResult, types]
+  );
 
   const handleSubmit = useCallback(
     (e) => {
@@ -164,7 +183,7 @@ const Search = () => {
             <path
               d="M8 1L2 7.5M2 7.5L8 14M2 7.5H12.25H22.5"
               stroke="#555"
-              strokeWidth="2"
+              strokeWidth="3"
             />
           </svg>
         </button>

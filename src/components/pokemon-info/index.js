@@ -48,7 +48,7 @@ const PokemonInfo = ({ pokemon, bgColor }) => {
             isActivity={currentTab === "attacks"}
             onClick={() => setCurrentTab("attacks")}
           >
-            Attacks
+            Abilities
           </Tab>
         </Tabs>
         <TabContent>{handleTabContent()}</TabContent>

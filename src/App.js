@@ -7,15 +7,6 @@ import GlobalStyles from "./styles/global";
 
 import client from "./apollo/config";
 
-// // client.resetStore()
-// client.onResetStore(async () => {
-//   initData();
-// });
-// // client.clearStore()
-// client.onClearStore(async () => {
-//   initData();
-// });
-
 function App() {
   return (
     <ApolloProvider client={client}>

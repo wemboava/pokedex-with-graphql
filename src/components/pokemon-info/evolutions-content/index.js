@@ -48,14 +48,17 @@ const EvolutionsContent = ({ evolutions, bgColor }) => {
   return (
     <Container themeColor={bgColor}>
       <div>
+        {!evolutions && (
+          <h3>This pokemon is already in the last evolution! =D</h3>
+        )}
         <ReactSiema ref={siemaRef} {...options}>
-          {evolutions.map((pokemon) => (
+          {evolutions?.map((pokemon) => (
             <div key={pokemon.id}>
               <Slide pokemon={pokemon} />
             </div>
           ))}
         </ReactSiema>
-        {evolutions.length > 1 && (
+        {evolutions?.length > 1 && (
           <div className="actions">
             <button type="button" onClick={() => siemaRef.current.prev()}>
               Previous

@@ -39,11 +39,11 @@ export const Container = styled.div`
   background: ${(props) => props.bgColor} url(${pokeball}) no-repeat;
   background-size: 300px;
   background-position: calc(100% + 105px) -112px;
-
+  background-attachment: fixed;
   .header {
     display: flex;
     justify-content: space-between;
-    padding: 30px 30px 30px 20px;
+    padding: 30px 30px 20px 20px;
     &__back-button {
       padding: 5px;
       background-color: transparent;
@@ -56,6 +56,20 @@ export const Container = styled.div`
       & svg {
         margin-right: 10px;
       }
+    }
+  }
+  .pokemon-name {
+    padding: 0 20px 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    h2 {
+      font-size: 2em;
+    }
+    span {
+      font-size: 1.1em;
+      font-weight: 600;
     }
   }
 `;

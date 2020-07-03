@@ -150,6 +150,10 @@ const PokemonDetail = () => {
           <div className="heart" />
         </HeartButton>
       </div>
+      <div className="pokemon-name">
+        <h2>{data.pokemon.name}</h2>
+        <span>#{data.pokemon.number}</span>
+      </div>
       <PokemonInfo pokemon={data.pokemon} bgColor={pokemonType.color} />
     </Container>
   );

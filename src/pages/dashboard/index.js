@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from "react";
 
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 
 import TypesList from "../../components/typesList";
 
@@ -39,7 +39,7 @@ const Dashboard = () => {
         </InputWrapper>
       </form>
       <div>
-        <a href="/">
+        <Link to="/search?favorites=all">
           <FavoriteButton>
             Favorite Pokémons
             <svg
@@ -55,7 +55,7 @@ const Dashboard = () => {
               />
             </svg>
           </FavoriteButton>
-        </a>
+        </Link>
       </div>
       <h3>Try by types</h3>
       <TypesList />

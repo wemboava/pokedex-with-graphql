@@ -21,7 +21,7 @@ export default createGlobalStyle`
 
   body {
     -webkit-font-smoothing: antialiased !important;
-    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-family: 'Roboto', sans-serif;
     color: #555;
     background: url(${pokeball}) no-repeat;
     background-size: 300px;
@@ -29,7 +29,7 @@ export default createGlobalStyle`
   }
 
   body, input, button {
-    font: 16px Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font: 16px 'Oxygen', sans-serif;
   }
 
   a {
