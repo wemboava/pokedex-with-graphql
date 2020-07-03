@@ -10,7 +10,7 @@ const TypesList = ({ pokemons }) => {
   return (
     <Container>
       <List>
-        {pokemons.slice(0, pokemons.length / 2).map((pokemon) => (
+        {pokemons.map((pokemon) => (
           <Link key={pokemon.id} to={`/pokemon/${pokemon.name}`}>
             <Item
               onClick={() => history.push(`/pokemon/${pokemon.name}`)}
@@ -18,38 +18,14 @@ const TypesList = ({ pokemons }) => {
             >
               <strong>{pokemon.name}</strong>
               <div>
+                <img src={pokemon.image} alt={pokemon.name} />
                 <Types>
                   {pokemon.types.map((type) => (
                     <TypeName key={type} bgColor={pokemon.bgColor}>
                       {type}
                     </TypeName>
                   ))}
-                  <li />
                 </Types>
-                <img src={pokemon.image} alt={pokemon.name} />
-              </div>
-            </Item>
-          </Link>
-        ))}
-      </List>
-      <List>
-        {pokemons.slice(pokemons.length / 2, pokemons.length).map((pokemon) => (
-          <Link key={pokemon.id} to={`/pokemon/${pokemon.name}`}>
-            <Item
-              onClick={() => history.push(`/pokemon/${pokemon.name}`)}
-              bgColor={pokemon.bgColor}
-            >
-              <strong>{pokemon.name}</strong>
-              <div>
-                <Types>
-                  {pokemon.types.map((type) => (
-                    <TypeName key={type} bgColor={pokemon.bgColor}>
-                      {type}
-                    </TypeName>
-                  ))}
-                  <li />
-                </Types>
-                <img src={pokemon.image} alt={pokemon.name} />
               </div>
             </Item>
           </Link>

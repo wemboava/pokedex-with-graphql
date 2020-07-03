@@ -11,6 +11,7 @@ import { GET_POKEMON_TYPES } from "../../apollo/queries/pokemonTypes";
 
 import { Container, HeartButton } from "./styles";
 import PokemonInfo from "../../components/pokemon-info";
+import Loader from "../../components/loader";
 
 const GET_POKEMON = gql`
   query GetPokemon($name: String) {
@@ -101,7 +102,7 @@ const PokemonDetail = () => {
     [favotitePokemonsResult]
   );
 
-  if (loading) return "Loading...";
+  if (loading) return <Loader />;
   if (error) return `Error! ${error.message}`;
 
   return (
@@ -122,7 +123,7 @@ const PokemonDetail = () => {
             <path
               d="M8 1L2 7.5M2 7.5L8 14M2 7.5H12.25H22.5"
               stroke="white"
-              strokeWidth="2"
+              strokeWidth="3"
             />
           </svg>
         </button>

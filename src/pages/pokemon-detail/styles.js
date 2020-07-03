@@ -43,8 +43,9 @@ export const Container = styled.div`
   .header {
     display: flex;
     justify-content: space-between;
-    padding: 30px;
+    padding: 30px 30px 30px 20px;
     &__back-button {
+      padding: 5px;
       background-color: transparent;
       color: #fff;
       border: none;

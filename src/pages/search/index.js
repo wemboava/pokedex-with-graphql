@@ -6,10 +6,11 @@ import gql from "graphql-tag";
 import { useQuery } from "@apollo/react-hooks";
 
 import PokemonsList from "../../components/pokemonsList";
+import Loader from "../../components/loader";
 
 import { Container, InputWrapper } from "./styles";
 
-// import search from "../../assets/images/search.svg";
+import search from "../../assets/images/search.svg";
 
 const GET_POKEMONS = gql`
   {
@@ -48,8 +49,7 @@ const GET_POKEMONS = gql`
 `;
 
 const Search = () => {
-  const router = useHistory();
-  // const params = useParams();
+  const history = useHistory();
 
   const [searchValue, setSearchValue] = useState("");
 
@@ -126,13 +126,17 @@ const Search = () => {
     return data;
   }, []);
 
-  const handleSubmit = useCallback((e) => {
-    e.preventDefault();
-  }, []);
+  const handleSubmit = useCallback(
+    (e) => {
+      e.preventDefault();
+      history.push(`pokemon/${searchValue}`);
+    },
+    [searchValue, history]
+  );
 
   const { loading, error, data } = useQuery(GET_POKEMONS);
 
-  if (loading) return "Loading...";
+  if (loading) return <Loader />;
   if (error) return `Error! ${error.message}`;
 
   const pokemons = data.pokemons.map((pokemon) => {
@@ -148,7 +152,7 @@ const Search = () => {
         <button
           className="header__back-button"
           type="button"
-          onClick={() => router.goBack()}
+          onClick={() => history.goBack()}
         >
           <svg
             width="23"
@@ -173,12 +177,9 @@ const Search = () => {
             onChange={(event) => setSearchValue(event.target.value)}
             placeholder="Search for pokémon names"
           />
-          {/* <img
-            onClick={handleSubmit}
-            className="search-image"
-            src={search}
-            alt="search"
-          /> */}
+          <button type="button" onClick={handleSubmit}>
+            <img className="search-image" src={search} alt="search" />
+          </button>
         </InputWrapper>
       </form>
       <PokemonsList pokemons={pokemonsFiltered(pokemons)} />

@@ -15,9 +15,12 @@ export const List = styled.ul`
 
 export const Item = styled.li`
   width: 100%;
-  background: ${(props) => props.bgColor} url(${pokeball}) no-repeat;
+  background: ${(props) =>
+    props.withBgImage
+      ? `${props.bgColor} url(${pokeball}) no-repeat`
+      : props.bgColor};
   background-position: right;
-  background-size: 75px;
+  background-size: ${(props) => (props.withBgImage ? "75px" : "100%")};
   color: #fff;
   font-weight: bold;
   padding: 15px;

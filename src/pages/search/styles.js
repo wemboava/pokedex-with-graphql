@@ -32,8 +32,12 @@ export const InputWrapper = styled.div`
   padding: 5px 10px 5px 0;
   box-shadow: 1px 1px 12px -2px #ddd;
   border: 1px solid rgba(221, 221, 221, 0.38);
-  img {
-    width: 30px;
+  button {
+    border: none;
+    background-color: transparent;
+    img {
+      width: 25px;
+    }
   }
   input {
     width: 100%;
