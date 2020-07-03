@@ -1,0 +1,26 @@
+stages:
+  - code_quality
+  - test
+  - build
+
+eslint:
+  image: node:8.9.4
+  stage: code_quality
+  before_script:
+    - yarn instaill -g eslint
+  script:
+    - eslint -- --ext .jsx,.js src/
+unit_tests:
+  image: node:8.9.4
+  stage: test
+  before_script:
+    - yarn install
+  script:
+    - yarn test
+react_build:
+  image: node:8.9.4
+  stage: build
+  before_script:
+    - yarn install
+  script:
+    - yarn build
