@@ -24,4 +24,3 @@ react_build:
     - yarn install
   script:
     - yarn build
-
