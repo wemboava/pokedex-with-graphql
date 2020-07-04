@@ -6,10 +6,6 @@
 #   script:
 #     - eslint -- --ext .jsx,.js src/
 
-stages:
-  - test
-  - build
-
 unit_tests:
   image: node:10.15.0
   stage: test
@@ -24,3 +20,4 @@ react_build:
     - yarn install
   script:
     - yarn build
+
