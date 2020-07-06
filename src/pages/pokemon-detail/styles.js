@@ -76,7 +76,7 @@ export const Container = styled.div`
       margin: auto;
     }
     h2 {
-      font-size: 2em;
+      font-size: 1.8em;
       @media (min-width: 968px) {
         font-size: 3em;
       }

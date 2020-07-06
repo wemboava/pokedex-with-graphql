@@ -26,7 +26,10 @@ react_build:
   script:
     - yarn build
 pages:
+  image: node:10.15.0
   stage: deploy
+  before_script:
+    - yarn install
   script:
     - CI=true yarn build
     - rm -rf public

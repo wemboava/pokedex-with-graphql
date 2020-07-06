@@ -4,7 +4,7 @@ import bgImage from "../../assets/images/spash-bg.svg";
 
 export const Container = styled.div`
   width: 100%;
-  height: 60%;
+  height: 50%;
   max-width: 968px;
   margin: auto;
   background-color: #fff;
@@ -19,6 +19,15 @@ export const Container = styled.div`
     position: initial;
     border-radius: 30px;
     margin-top: 120px;
+  }
+  @media (min-height: 600px) {
+    height: 55%;
+  }
+  @media (min-height: 650px) {
+    height: 58%;
+  }
+  @media (min-height: 700px) {
+    height: 65%;
   }
 `;
 

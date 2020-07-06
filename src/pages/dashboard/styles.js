@@ -3,7 +3,7 @@ import styled from "styled-components";
 import pokeball from "../../assets/images/pokeball-bg.png";
 
 export const Container = styled.div`
-  padding: 40px 30px;
+  padding: 40px 20px;
   max-width: 968px;
   margin: auto;
   h1 {
