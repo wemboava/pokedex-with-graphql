@@ -1,71 +1,24 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
 
-import gql from "graphql-tag";
 import { useQuery, useMutation } from "@apollo/react-hooks";
 
 import { UPDATE_FAVORITE_POKEMONS } from "../../apollo/mutations/favoritePokemons";
 import { UPDATE_CURRENT_POKEMON_TYPES } from "../../apollo/mutations/pokemonTypes";
 import { GET_FAVORITE_POKEMONS } from "../../apollo/queries/favoritePokemons";
 import { GET_POKEMON_TYPES } from "../../apollo/queries/pokemonTypes";
+import { GET_POKEMON } from "../../apollo/queries/pokemons";
 
 import { Container, HeartButton } from "./styles";
 import PokemonInfo from "../../components/pokemon-info";
 import Loader from "../../components/loader";
+import NotFound from "../../components/notFound";
 
-const GET_POKEMON = gql`
-  query GetPokemon($name: String) {
-    pokemon(name: $name) {
-      id
-      number
-      name
-      image
-      classification
-      height {
-        minimum
-        maximum
-      }
-      weight {
-        minimum
-        maximum
-      }
-      resistant
-      weaknesses
-      types
-      attacks {
-        fast {
-          name
-          type
-          damage
-        }
-        special {
-          name
-          type
-          damage
-        }
-      }
-      evolutions {
-        id
-        number
-        name
-        image
-        classification
-        height {
-          minimum
-          maximum
-        }
-        weight {
-          minimum
-          maximum
-        }
-      }
-    }
-  }
-`;
+import arrowBack from "../../assets/images/arrow-back-white.svg";
 
 const PokemonDetail = () => {
   const params = useParams();
-  const router = useHistory();
+  const history = useHistory();
 
   const [pokemonType, setPokemonType] = useState({});
 
@@ -104,6 +57,7 @@ const PokemonDetail = () => {
 
   if (loading) return <Loader />;
   if (error) return `Error! ${error.message}`;
+  if (!data.pokemon) return <NotFound pokemon={params.id} />;
 
   return (
     <Container bgColor={pokemonType.color}>
@@ -111,21 +65,9 @@ const PokemonDetail = () => {
         <button
           className="header__back-button"
           type="button"
-          onClick={() => router.goBack()}
+          onClick={() => history.goBack()}
         >
-          <svg
-            width="23"
-            height="15"
-            viewBox="0 0 23 15"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8 1L2 7.5M2 7.5L8 14M2 7.5H12.25H22.5"
-              stroke="white"
-              strokeWidth="3"
-            />
-          </svg>
+          <img src={arrowBack} alt="arrow back icon" />
         </button>
         <HeartButton
           onClick={() =>

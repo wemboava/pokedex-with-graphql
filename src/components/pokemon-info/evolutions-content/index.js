@@ -1,11 +1,12 @@
 import React, { useRef } from "react";
+import { Link } from "react-router-dom";
 import ReactSiema from "sns-react-siema";
 
 import { Container, SlideContent } from "./styles";
 
-const Slide = ({ pokemon }) => {
+const Slide = ({ pokemon, bgColor }) => {
   return (
-    <SlideContent>
+    <SlideContent themeColor={bgColor}>
       <div>
         <h4>{pokemon.name}</h4>
         <ul>
@@ -24,6 +25,9 @@ const Slide = ({ pokemon }) => {
             <span>
               {pokemon.weight.minimum} - {pokemon.weight.maximum}
             </span>
+          </li>
+          <li>
+            <Link to={`/pokemon/${pokemon.name}`}>View more</Link>
           </li>
         </ul>
       </div>
@@ -54,7 +58,7 @@ const EvolutionsContent = ({ evolutions, bgColor }) => {
         <ReactSiema ref={siemaRef} {...options}>
           {evolutions?.map((pokemon) => (
             <div key={pokemon.id}>
-              <Slide pokemon={pokemon} />
+              <Slide pokemon={pokemon} bgColor={bgColor} />
             </div>
           ))}
         </ReactSiema>

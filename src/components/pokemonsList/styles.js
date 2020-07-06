@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { lighten } from "polished";
+import { lighten, darken } from "polished";
 
 import bgImage from "../../assets/images/splash-teste.svg";
 
@@ -17,6 +17,9 @@ export const List = styled.ul`
   justify-content: space-between;
   & a {
     width: 47%;
+    @media (min-width: 968px) {
+      width: 31%;
+    }
   }
 `;
 
@@ -49,16 +52,39 @@ export const Item = styled.li`
 
   background: ${(props) => props.bgColor} url(${bgImage});
   background-repeat: no-repeat;
-  background-position: calc(34%) -12px;
-  background-size: 235px;
+  background-position: calc(25%) -10px;
+  background-size: 250px;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   color: #fff;
   position: relative;
+  transition: all 0.3s;
+  @media (min-width: 500px) {
+    background-position: calc(45%) -21px;
+    background-size: 265px;
+  }
+  @media (min-width: 768px) {
+    background-position: calc(90%) -18px;
+  }
+  &:hover {
+    background: ${(props) => darken(0.1, props.bgColor)} url(${bgImage})
+      no-repeat;
+    background-repeat: no-repeat;
+    background-position: calc(34%) -12px;
+    background-size: 235px;
+    @media (min-width: 500px) {
+      background-position: calc(65%) -25px;
+      background-size: 285px;
+    }
+    @media (min-width: 768px) {
+      background-position: calc(100% + 10px) -25px;
+    }
+  }
   strong {
     z-index: 4;
+    font-size: 1.3em;
   }
   & div {
     width: 100%;

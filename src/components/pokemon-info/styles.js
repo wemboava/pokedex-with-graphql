@@ -3,14 +3,23 @@ import styled, { css } from "styled-components";
 import bgImage from "../../assets/images/spash-bg.svg";
 
 export const Container = styled.div`
+  width: 100%;
+  height: 60%;
+  max-width: 968px;
+  margin: auto;
   background-color: #fff;
   padding: 30px;
   position: absolute;
   bottom: 0;
-  width: 100%;
-  height: 60%;
   border-radius: 30px 30px 0 0;
   z-index: 3;
+  @media (min-width: 968px) {
+    height: auto;
+    min-height: 500px;
+    position: initial;
+    border-radius: 30px;
+    margin-top: 120px;
+  }
 `;
 
 export const Content = styled.div`
@@ -56,6 +65,7 @@ export const Tab = styled.li`
   font-weight: 600;
   font-size: 1em;
   transition: 0.3s ease-in-out;
+  cursor: pointer;
   ${(props) =>
     props.isActivity &&
     css`

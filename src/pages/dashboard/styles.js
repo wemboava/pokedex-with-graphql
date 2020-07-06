@@ -4,7 +4,8 @@ import pokeball from "../../assets/images/pokeball-bg.png";
 
 export const Container = styled.div`
   padding: 40px 30px;
-
+  max-width: 968px;
+  margin: auto;
   h1 {
     margin-bottom: 20px;
     font-weight: bold;

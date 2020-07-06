@@ -15,8 +15,6 @@ export const PokemonTypesMutations = {
       (type) => type.name === variables.typeName
     );
 
-    console.log("currentType", currentType);
-
     cache.writeData({
       data: {
         ...data,

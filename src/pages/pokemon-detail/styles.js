@@ -22,6 +22,8 @@ export const HeartButton = styled.div`
     transform: scale(3);
     position: absolute;
     z-index: 20;
+    margin-left: -20px;
+    cursor: pointer;
     &:checked + .heart {
       animation: heartAnimate 0.8s steps(28) forwards;
     }
@@ -40,6 +42,10 @@ export const Container = styled.div`
   background-size: 300px;
   background-position: calc(100% + 105px) -112px;
   background-attachment: fixed;
+  @media (min-width: 968px) {
+    height: auto;
+    padding-bottom: 50px;
+  }
   .header {
     display: flex;
     justify-content: space-between;
@@ -64,8 +70,16 @@ export const Container = styled.div`
     justify-content: space-between;
     align-items: center;
     color: #fff;
+    @media (min-width: 968px) {
+      padding: 0 0 10px 0;
+      max-width: 968px;
+      margin: auto;
+    }
     h2 {
       font-size: 2em;
+      @media (min-width: 968px) {
+        font-size: 3em;
+      }
     }
     span {
       font-size: 1.1em;

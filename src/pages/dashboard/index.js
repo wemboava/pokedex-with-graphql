@@ -1,43 +1,20 @@
-import React, { useState, useCallback } from "react";
+import React from "react";
 
-import { useHistory, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import TypesList from "../../components/typesList";
+import SearchBar from "../../components/searchBar";
 
-import { Container, InputWrapper, FavoriteButton } from "./styles";
-
-import search from "../../assets/images/search.svg";
+import { Container, FavoriteButton } from "./styles";
 
 const Dashboard = () => {
-  const history = useHistory();
-  const [searchValue, setSearchValue] = useState("");
-
-  const handleSubmit = useCallback(
-    (e) => {
-      e.preventDefault();
-      history.push(`pokemon/${searchValue}`);
-    },
-    [searchValue, history]
-  );
-
   return (
     <Container>
       <h1>
         What pokemon
         <br /> are you looking for?
       </h1>
-      <form onSubmit={handleSubmit} className="search">
-        <InputWrapper>
-          <input
-            value={searchValue}
-            onChange={(event) => setSearchValue(event.target.value)}
-            placeholder="Search for pokémon names"
-          />
-          <button type="button" onClick={handleSubmit}>
-            <img className="search-image" src={search} alt="search" />
-          </button>
-        </InputWrapper>
-      </form>
+      <SearchBar />
       <div>
         <Link to="/search?favorites=all">
           <FavoriteButton>
