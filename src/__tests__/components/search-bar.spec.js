@@ -1,6 +1,6 @@
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
-import Search from "../../pages/search";
+import SearchBar from "../../components/searchBar";
 
 const mockedHistoryPush = jest.fn();
 
@@ -19,7 +19,9 @@ jest.mock("@apollo/react-hooks", () => {
         loading: false,
         error: false,
         data: {
-          pokemons: [],
+          pokemonTypes: {
+            list: [],
+          },
         },
       };
     },
@@ -28,7 +30,7 @@ jest.mock("@apollo/react-hooks", () => {
 
 describe("Search Page", () => {
   it("should be possible to do a search by name", () => {
-    const { getByPlaceholderText } = render(<Search />);
+    const { getByPlaceholderText } = render(<SearchBar />);
 
     const searchField = getByPlaceholderText("Search for pokémon names");
 
@@ -37,7 +39,6 @@ describe("Search Page", () => {
     fireEvent.submit(searchField);
 
     expect(mockedHistoryPush).toHaveBeenCalledWith("/pokemon/pikachu");
-
     // debug();
   });
 });

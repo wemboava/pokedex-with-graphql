@@ -11,7 +11,7 @@ const PokemonsList = () => {
   const pokemonTypesResult = useQuery(GET_POKEMON_TYPES);
 
   useEffect(() => {
-    setPokemonTypesList(pokemonTypesResult.data.pokemonTypes.list);
+    setPokemonTypesList(pokemonTypesResult.data.pokemonTypes?.list);
   }, [setPokemonTypesList, pokemonTypesResult]);
 
   return (
