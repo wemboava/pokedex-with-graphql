@@ -1,3 +1,16 @@
+stages:
+  - code_quality
+  - test
+  - build
+  - deploy
+
+eslint:
+  image: node:10.15.0
+  stage: code_quality
+  before_script:
+    - yarn install -g eslint
+  script:
+    - eslint -- --ext .jsx,.js src/
 unit_tests:
   image: node:10.15.0
   stage: test
