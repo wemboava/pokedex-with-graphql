@@ -59,6 +59,7 @@ export const Container = styled.div`
       display: flex;
       align-items: center;
       font-weight: 600;
+      z-index: 20;
       & svg {
         margin-right: 10px;
       }
