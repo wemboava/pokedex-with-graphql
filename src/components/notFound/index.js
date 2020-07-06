@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 import SearchBar from "../searchBar";
 
@@ -9,9 +8,9 @@ import notFoundPoke from "../../assets/images/not-found.gif";
 
 const NotFound = ({ pokemon }) => (
   <Container>
-    <h2>Ué, we did not find any pokemon with the name "{pokemon}" :')</h2>
+    <h2>Uai, we did not find any pokemon with the name "{pokemon}" :')</h2>
     <h3>
-      Try again or <Link to="/">go to home!</Link>
+      Try again or <a href="/">go to home!</a>
     </h3>
     <SearchBar />
     <div>

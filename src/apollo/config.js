@@ -16,8 +16,11 @@ const client = new ApolloClient({
   },
 });
 
+const favoritePokemonsInLocalStore =
+  JSON.parse(localStorage.getItem("@pokedex/favorite-pokemons")) || [];
+
 const initialState = {
-  favoritePokemons: [],
+  favoritePokemons: favoritePokemonsInLocalStore,
   pokemonTypes: {
     __typename: "pokemonsType",
     id: 99,
@@ -98,13 +101,13 @@ const initialState = {
         __typename: "pokemonsType",
         id: 12,
         name: "Rock",
-        color: "#bdbdbd",
+        color: "#c4c4c4",
       },
       {
         __typename: "pokemonsType",
         id: 13,
         name: "Normal",
-        color: "#ccc",
+        color: "#678678",
       },
       {
         __typename: "pokemonsType",
@@ -122,7 +125,7 @@ const initialState = {
         __typename: "pokemonsType",
         id: 16,
         name: "Steel",
-        color: "#B2B4B5",
+        color: "#c9BfB5",
       },
     ],
   },

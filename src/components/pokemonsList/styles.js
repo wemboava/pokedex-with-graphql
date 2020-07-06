@@ -8,6 +8,24 @@ export const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  .no-favorite {
+    width: 100%;
+    padding: 30px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    & > h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    & > div {
+      width: 100%;
+      & > img {
+        max-width: 100%;
+      }
+    }
+  }
 `;
 
 export const List = styled.ul`

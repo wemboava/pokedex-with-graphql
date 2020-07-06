@@ -28,6 +28,11 @@ export const FavoritePokemonsMutations = {
       ];
     }
 
+    localStorage.setItem(
+      "@pokedex/favorite-pokemons",
+      JSON.stringify(newFavoritePokemons)
+    );
+
     cache.writeData({
       data: { favoritePokemons: newFavoritePokemons },
     });
