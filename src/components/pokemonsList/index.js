@@ -12,7 +12,7 @@ const TypesList = ({ pokemons }) => {
       {!pokemons.length && (
         <div className="no-favorite">
           <h2>
-            You haven't favored any pokemon yet,
+            You haven't starred any pokemon yet,
             <br /> what are you waiting for?
           </h2>
           <div>
