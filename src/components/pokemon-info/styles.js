@@ -27,7 +27,7 @@ export const Container = styled.div`
     height: 58%;
   }
   @media (min-height: 700px) {
-    height: 65%;
+    height: 60%;
   }
 `;
 
