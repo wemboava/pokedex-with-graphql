@@ -10,7 +10,7 @@ eslint:
   before_script:
     - yarn global add eslint
   script:
-    - eslint -- --ext .jsx,.js src/
+    - yarn lint
 unit_tests:
   image: node:10.15.0
   stage: test
