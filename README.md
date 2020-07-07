@@ -19,9 +19,9 @@ Uma pokedex que te possibilita listar pokemons, pesquisar por nome, favoritar e 
 ## 📱 Instale em seu smartphone
 Após alguns segundos, clique no botão que irá aparecer para adicionar na tela inicial, ou vá até as opções do browser e clique em "Adicionar à tela inicial"
 
-![image](https://user-images.githubusercontent.com/23389358/86694475-0542cf00-bfe2-11ea-8238-dfb3c7ca19f4.png)
+![image](https://user-images.githubusercontent.com/23389358/86695063-97e36e00-bfe2-11ea-9e65-cef81403fe6d.png)
 
-![image](https://user-images.githubusercontent.com/23389358/86694384-ecd2b480-bfe1-11ea-8f90-bbf241e2f4fd.png)
+![image](https://user-images.githubusercontent.com/23389358/86694792-5357d280-bfe2-11ea-9dca-72e36db14142.png)
 
 
 
