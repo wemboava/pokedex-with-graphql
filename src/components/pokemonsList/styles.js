@@ -20,7 +20,9 @@ export const Container = styled.div`
       margin-bottom: 30px;
     }
     & > div {
-      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       & > img {
         max-width: 100%;
       }

@@ -10,7 +10,7 @@ const DamageBar = ({ title, rate, type, bgColor }) => {
         <TypeName bgColor={bgColor}>{type}</TypeName>
       </div>
       <div className="rate">
-        <span>{rate}</span> <Bar rate={rate} />
+        <span>{rate}</span> <Bar rate={(rate / 120) * 100} />
       </div>
     </Container>
   );

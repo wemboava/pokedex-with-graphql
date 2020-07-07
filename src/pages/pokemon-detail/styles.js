@@ -38,6 +38,7 @@ export const HeartButton = styled.div`
 
 export const Container = styled.div`
   height: 100%;
+  min-height: 100vh;
   background: ${(props) => props.bgColor} url(${pokeball}) no-repeat;
   background-size: 300px;
   background-position: calc(100% + 105px) -112px;
