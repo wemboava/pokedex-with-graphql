@@ -1,5 +1,6 @@
+
 <p align="center">
-  ![image](https://user-images.githubusercontent.com/23389358/86684328-d2480d80-bfd8-11ea-9281-0a7026f07c19.png)
+  <img width="300" height="300" src="https://pngimg.com/uploads/pokeball/pokeball_PNG24.png">
 </p>
 
 <h1 align="center">Pokedex</h1>
@@ -8,11 +9,30 @@
   <a href="https://agitated-hawking-8d98fe.netlify.app/">DEMO</a>
 </p>
 
-
-## 💻 Project
+## 💡 Projeto
 Uma pokedex que te possibilita listar pokemons, pesquisar por nome, favoritar e ver diversas informações de um pokemon específico, desenvolvida com algumas features de PWA, podendo assim ser instalado em seu aparelho celular como se fosse um aplicativo.
 
-## :rocket: Tecnologias
+## ⚙️ Instalação local
+  - ```yarn install```
+  - ```yarn start```
+
+## 📱 Instale em seu smartphone
+Após alguns segundos, clique no botão que irá aparecer para adicionar na tela inicial, ou vá até as opções do browser e clique em "Adicionar à tela inicial"
+
+![image](https://user-images.githubusercontent.com/23389358/86694475-0542cf00-bfe2-11ea-8238-dfb3c7ca19f4.png)
+
+![image](https://user-images.githubusercontent.com/23389358/86694384-ecd2b480-bfe1-11ea-8f90-bbf241e2f4fd.png)
+
+
+
+## 🖥 Telas
+![image](https://user-images.githubusercontent.com/23389358/86689247-32d94980-bfdd-11ea-9c20-23c58fff2dbe.png)
+![image](https://user-images.githubusercontent.com/23389358/86689449-6025f780-bfdd-11ea-9160-36b8248eb79f.png)
+![image](https://user-images.githubusercontent.com/23389358/86689640-8e0b3c00-bfdd-11ea-8eb7-cdcd47dff7e1.png)
+![image](https://user-images.githubusercontent.com/23389358/86689793-b5fa9f80-bfdd-11ea-8a0e-3bccf9cbf60c.png)
+
+
+## ⚛️ Tecnologias
 Para gerenciar os estados da aplicação, foi utilizado o local state management do apollo client
 - React
 - Apollo Client
