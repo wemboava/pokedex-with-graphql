@@ -1,28 +1,25 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+  ![image](https://user-images.githubusercontent.com/23389358/86684328-d2480d80-bfd8-11ea-9281-0a7026f07c19.png)
+</p>
 
-## Available Scripts
+<h1 align="center">Pokedex</h1>
+<p align="center">
+  Simples PWA desenvolvido com React, GraphQL e Apollo!<br />
+  <a href="https://agitated-hawking-8d98fe.netlify.app/">DEMO</a>
+</p>
 
-In the project directory, you can run:
 
-### `yarn start`
+## 💻 Project
+Uma pokedex que te possibilita listar pokemons, pesquisar por nome, favoritar e ver diversas informações de um pokemon específico, desenvolvida com algumas features de PWA, podendo assim ser instalado em seu aparelho celular como se fosse um aplicativo.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## :rocket: Tecnologias
+Para gerenciar os estados da aplicação, foi utilizado o local state management do apollo client
+- React
+- Apollo Client
+- GraphQL
+- PWA
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## :rocket: Deploy
+Utilizando o espelhamento de repositorio do gitlab, criei uma pipeline que quando esse repo é alterado, automaticamente a pipeline é iniciada no gotlab, passando pelos processos de code-quality => test => build => deploy
 
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![image](https://user-images.githubusercontent.com/23389358/86683214-b7c16480-bfd7-11ea-9082-57142905059f.png)
