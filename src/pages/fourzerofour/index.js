@@ -4,8 +4,6 @@ import { Container, Message, Illustration, GoBackButton } from "./styles";
 
 import pokeballColored from "../../assets/images/pokeball-colored.png";
 
-import arrowBack from "../../assets/images/arrow-back-white.svg";
-
 const FourZeroFour = () => {
   const history = useHistory();
   function handleGoBack() {
