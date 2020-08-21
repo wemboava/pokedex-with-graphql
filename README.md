@@ -6,14 +6,22 @@
 <h1 align="center">Pokedex</h1>
 <p align="center">
   Simples PWA desenvolvido com React, GraphQL e Apollo!<br />
-  <a href="https://agitated-hawking-8d98fe.netlify.app/">DEMO</a>
 </p>
 
 ## 💡 Projeto
 Uma pokedex que te possibilita listar pokemons, pesquisar por nome, favoritar e ver diversas informações de um pokemon específico, desenvolvida com algumas features de PWA, podendo assim ser instalado em seu aparelho celular como se fosse um aplicativo.
 
 ## ⚙️ Instalação local
-  - ```yarn install```
+ ### Back-End
+  - ```git clone https://github.com/lucasbento/graphql-pokemon.git```
+  - ```cd graphql-pokemon```
+  - ```yarn```
+  - ```yarn run watch```
+  
+ ### Front-End
+  - ```git clone https://github.com/wemboava/pokedex-with-graphql.git```
+  - ```cd pokedex-with-graphql```
+  - ```yarn```
   - ```yarn start```
 
 ## 📱 Instale em seu smartphone
@@ -21,7 +29,6 @@ Após alguns segundos, clique no botão que irá aparecer para adicionar na tela
 
 ![image](https://user-images.githubusercontent.com/23389358/86695384-de38cd00-bfe2-11ea-861c-9f56409c8f7f.png)
 ![image](https://user-images.githubusercontent.com/23389358/86695590-0e806b80-bfe3-11ea-95cc-c8bd184333d5.png)
-
 
 
 
@@ -38,8 +45,3 @@ Para gerenciar os estados da aplicação, foi utilizado o local state management
 - Apollo Client
 - GraphQL
 - PWA
-
-## :rocket: Deploy
-Utilizando o espelhamento de repositorio do gitlab, criei uma pipeline que quando esse repo é alterado, automaticamente a pipeline é iniciada no gotlab, passando pelos processos de code-quality => test => build => deploy
-
-![image](https://user-images.githubusercontent.com/23389358/86683214-b7c16480-bfd7-11ea-9082-57142905059f.png)
