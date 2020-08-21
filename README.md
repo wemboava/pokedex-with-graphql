@@ -24,13 +24,6 @@ Uma pokedex que te possibilita listar pokemons, pesquisar por nome, favoritar e 
   - ```yarn```
   - ```yarn start```
 
-## 📱 Instale em seu smartphone
-Após alguns segundos, clique no botão que irá aparecer para adicionar na tela inicial, ou vá até as opções do browser e clique em "Adicionar à tela inicial"
-
-![image](https://user-images.githubusercontent.com/23389358/86695384-de38cd00-bfe2-11ea-861c-9f56409c8f7f.png)
-![image](https://user-images.githubusercontent.com/23389358/86695590-0e806b80-bfe3-11ea-95cc-c8bd184333d5.png)
-
-
 
 ## 🖥 Telas
 ![image](https://user-images.githubusercontent.com/23389358/86689247-32d94980-bfdd-11ea-9c20-23c58fff2dbe.png)
